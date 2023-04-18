@@ -1,11 +1,23 @@
 import React from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
+import { getPokemons } from '../../redux/actTypes';
 
 const SplashPage = () => {
+  const dispatch = useDispatch();
+  const pokemons = useSelector(state => state.homeReducers.pokemons);
+
   return (
     <View>
-      <Text>SplashPage</Text>
+      {pokemons?.results?.map((data, id) => {
+        return <Text key={id}>{data.name}</Text>
+      })}
+      <TouchableOpacity onPress={() => {
+        dispatch(getPokemons());
+      }}>
+        <Text>TEST DONG</Text>
+      </TouchableOpacity>
     </View>
   );
 };
