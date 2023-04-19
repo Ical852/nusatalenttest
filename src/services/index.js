@@ -11,3 +11,14 @@ export const action = async url => {
       throw err;
     });
 };
+
+export const fullUrlAction = async fullUrl => {
+  return await axios
+    .get(fullUrl)
+    .then(res => {
+      return res;
+    })
+    .catch(err => {
+      throw err;
+    });
+};

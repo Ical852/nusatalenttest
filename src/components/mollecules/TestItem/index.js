@@ -12,7 +12,7 @@ const TestItem = ({testing}) => {
       key={id}
       className="mb-3"
       onPress={() => {
-        navigation.navigate('Detail', {testing});
+        navigation.navigate('TestDetailPage', {testing});
       }}>
       <SharedElement id={`item.${id}.photo`}>
         <Image source={{uri: image}} className="w-44 h-44 rounded-md" />

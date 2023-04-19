@@ -1,15 +1,29 @@
-import React from 'react';
+import React, {useState} from 'react';
 
-import { StyleSheet, Text, View } from 'react-native';
+import {StyleSheet, View} from 'react-native';
+import {useSafeAreaInsets} from 'react-native-safe-area-context';
 
-const SearchPage = () => {
+import {SearchHeader} from '../../components';
+
+const SearchPage = ({navigation}) => {
+  const insets = useSafeAreaInsets();
+  const [search, setSearch] = useState('');
+
   return (
-    <View>
-      <Text>SearchPage</Text>
+    <View className="bg-white flex-1" style={styles.container(insets.top)}>
+      <SearchHeader
+        navigation={navigation}
+        value={search}
+        onChangeText={text => setSearch(text)}
+      />
     </View>
   );
 };
 
 export default SearchPage;
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+  container: top => ({
+    paddingTop: top,
+  }),
+});

@@ -1,7 +1,9 @@
 import {GET_POKEMONS_SUCCESS} from '../actTypes';
 
 const initialState = {
-  pokemons: {},
+  pokemons: {
+    results: [],
+  },
   isLoading: false,
   message: '',
 };
