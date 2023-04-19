@@ -18,3 +18,11 @@ export const getData = async key => {
     showError('Failed get data : ', error);
   }
 };
+
+export const deleteAll = async () => {
+  try {
+    await AsyncStorage.clear();
+  } catch (error) {
+    showError('Failed delete data : ', error);
+  }
+};

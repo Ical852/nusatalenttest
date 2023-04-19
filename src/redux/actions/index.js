@@ -1,4 +1,5 @@
 import {action, fullUrlAction} from '../../services';
+import {APP_URL} from '../../utils';
 
 export const fetchPokemonsData = async () => {
   try {
@@ -16,6 +17,28 @@ export const fetchPokemonsCategory = async id => {
       results: response.data.pokemon,
     };
     return pokemons;
+  } catch (error) {
+    throw error;
+  }
+};
+
+export const fetchPokemonsByName = async name => {
+  try {
+    const response = await action(`pokemon/${name}`);
+    if (response.data !== undefined) {
+      const pokemons = {
+        results: [
+          {
+            name: name,
+            url: `${APP_URL}pokemon/${response.data.id}/`,
+          },
+        ],
+      };
+      return pokemons;
+    }
+    return {
+      results: [],
+    };
   } catch (error) {
     throw error;
   }

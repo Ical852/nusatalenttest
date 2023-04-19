@@ -65,6 +65,12 @@ const HomePage = ({navigation}) => {
           defaultButtonText="All"
         />
 
+        {pokemons?.results?.length < 1 && (
+          <Text className="text-center font-bold text-base mt-5">
+            No Data Yet
+          </Text>
+        )}
+
         <MansoryList
           key={item => item.id}
           showsVerticalScrollIndicator={false}

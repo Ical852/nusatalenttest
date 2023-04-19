@@ -8,7 +8,7 @@ import {
 import React from 'react';
 import {IcBack, IcSearch} from '../../../assets';
 
-const SearchHeader = ({navigation, onChangeText, value}) => {
+const SearchHeader = ({navigation, onChangeText, value, onEndEditing}) => {
   return (
     <View className="flex-row items-center h-16 px-5">
       <TouchableOpacity
@@ -26,6 +26,7 @@ const SearchHeader = ({navigation, onChangeText, value}) => {
           placeholder="Search Pokemon Here..."
           onChangeText={onChangeText}
           value={value}
+          onEndEditing={onEndEditing}
         />
       </View>
     </View>
