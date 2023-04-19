@@ -1,14 +1,7 @@
 import React from 'react';
 
 import {createSharedElementStackNavigator} from 'react-navigation-shared-element';
-import {
-  DetailPage,
-  HomePage,
-  SearchPage,
-  SplashPage,
-  TestDetailPage,
-  TestPage,
-} from '../pages';
+import {DetailPage, HomePage, SearchPage, SplashPage} from '../pages';
 
 const Stack = createSharedElementStackNavigator();
 
@@ -19,7 +12,6 @@ const Router = () => {
       screenOptions={{headerShown: false}}>
       <Stack.Screen name="Splash" component={SplashPage} />
       <Stack.Screen name="Detail" component={DetailPage} />
-      <Stack.Screen name="TestPage" component={TestPage} />
       <Stack.Screen name="Search" component={SearchPage} />
       <Stack.Screen
         name="Home"
@@ -28,14 +20,6 @@ const Router = () => {
           if (showing && otherNavigation.name === 'Splash') {
             return ['pokeball', 'poketext'];
           }
-        }}
-      />
-      <Stack.Screen
-        name="TestDetailPage"
-        component={TestDetailPage}
-        sharedElements={route => {
-          const {testing} = route.params;
-          return [`item.${testing.id}.photo`];
         }}
       />
     </Stack.Navigator>

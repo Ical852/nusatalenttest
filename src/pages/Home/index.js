@@ -7,7 +7,7 @@ import {useFocusEffect} from '@react-navigation/native';
 import SelectDropdown from 'react-native-select-dropdown';
 import MansoryList from '@react-native-seoul/masonry-list';
 
-import {MainHeader, PokemonCard} from '../../components';
+import {MainHeader, PaginateButton, PokemonCard} from '../../components';
 import {pokeCategory} from '../../utils';
 import {getPokemons} from '../../redux/actTypes';
 
@@ -63,6 +63,10 @@ const HomePage = ({navigation}) => {
           keyExtractor={item => item.id}
           style={styles.mansoryList}
         />
+
+        <View className="w-full items-center mt-10">
+          <PaginateButton />
+        </View>
 
         <View className="h-20" />
       </ScrollView>

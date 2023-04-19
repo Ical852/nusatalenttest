@@ -30,7 +30,6 @@ const PokemonCard = ({item}) => {
       showError('Cannot get the detail of ', name, ' Data');
     }
   }, [name, url]);
-
   useEffect(() => {
     fetchDetails();
   }, [fetchDetails]);
