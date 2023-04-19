@@ -1,23 +1,29 @@
-import React from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import React, { useState } from 'react';
 
-import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
-import { getPokemons } from '../../redux/actTypes';
+import { StyleSheet, View } from 'react-native';
+import { TestItem } from '../../components';
 
 const SplashPage = () => {
-  const dispatch = useDispatch();
-  const pokemons = useSelector(state => state.homeReducers.pokemons);
+  const [test, testData] = useState([
+    {
+      id: 1,
+      image: 'https://media.licdn.com/dms/image/D5603AQG8TnZ0oQ1E_A/profile-displayphoto-shrink_800_800/0/1671005717839?e=2147483647&v=beta&t=jFOOZ9g0fZGBzxaAicpzK8cZDdH7oGOhW0AuTkt7Wlw',
+      name: 'Shalahuddin Ahmad Aziz',
+      job: 'Mobile Developer'
+    },
+    {
+      id: 2,
+      image: 'https://cdn.dribbble.com/users/10398535/avatars/normal/06d981a9d3c5ed2cfd9a5e40814c4c2e.jpeg?1641894202',
+      name: 'Ical Codegp',
+      job: 'Full-Stack Developer'
+    },
+  ]);
 
   return (
-    <View>
-      {pokemons?.results?.map((data, id) => {
-        return <Text key={id}>{data.name}</Text>
+    <View className='m-5'>
+      {test.map((testdata) => {
+        return <TestItem key={testdata.id} testing={testdata} />
       })}
-      <TouchableOpacity onPress={() => {
-        dispatch(getPokemons());
-      }}>
-        <Text>TEST DONG</Text>
-      </TouchableOpacity>
     </View>
   );
 };

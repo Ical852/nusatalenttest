@@ -8,7 +8,7 @@ const initialState = {
 
 export const homeReducers = (state = initialState, action) => {
     switch (action.type) {
-        case GET_POKEMONS_SUCCESS :
+        case GET_POKEMONS_SUCCESS:
             return {
                 ...state,
                 pokemons: action.pokemons,
