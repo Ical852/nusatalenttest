@@ -11,8 +11,15 @@ const Router = () => {
       initialRouteName="Splash"
       screenOptions={{headerShown: false}}>
       <Stack.Screen name="Splash" component={SplashPage} />
-      <Stack.Screen name="Detail" component={DetailPage} />
       <Stack.Screen name="Search" component={SearchPage} />
+      <Stack.Screen
+        name="Detail"
+        component={DetailPage}
+        sharedElements={(route, otherNavigation, showing) => {
+          const {curName} = route.params;
+          return [curName];
+        }}
+      />
       <Stack.Screen
         name="Home"
         component={HomePage}

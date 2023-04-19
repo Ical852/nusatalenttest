@@ -14,7 +14,7 @@ const NextButton = ({disabled, onPress}) => {
       className={`flex-row items-center py-1 px-2 rounded-md ${
         disabled ? 'opacity-30' : ''
       }`}>
-      <Text className="text-white mr-1">Next</Text>
+      <Text className="text-white mr-1 text-base font-bold">Next</Text>
       <IcNext />
     </TouchableOpacity>
   );

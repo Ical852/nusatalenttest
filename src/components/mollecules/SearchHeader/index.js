@@ -15,7 +15,7 @@ const SearchHeader = ({navigation, onChangeText, value}) => {
         onPress={() => {
           navigation.goBack();
         }}>
-        <IcBack />
+        <IcBack fill={'#636363'} />
       </TouchableOpacity>
       <View
         id="searchbar"

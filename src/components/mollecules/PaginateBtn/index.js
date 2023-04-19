@@ -3,12 +3,28 @@ import {StyleSheet, View} from 'react-native';
 
 import {NextButton, PreviousButton} from '../../atoms';
 
-const PaginateButton = () => {
+const PaginateButton = ({data, onAction}) => {
+  const {next, previous} = data;
+
+  if (next === undefined && previous === undefined) {
+    return <View />;
+  }
+
   return (
     <View className="flex-row items-center">
-      <PreviousButton />
+      <PreviousButton
+        disabled={previous === null}
+        onPress={() => {
+          onAction(previous);
+        }}
+      />
       <View className="mr-2" />
-      <NextButton />
+      <NextButton
+        disabled={next === null}
+        onPress={() => {
+          onAction(next);
+        }}
+      />
     </View>
   );
 };

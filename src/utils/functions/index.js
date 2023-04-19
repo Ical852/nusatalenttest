@@ -42,3 +42,22 @@ export const generateTypeColor = type => {
       return customColors.grass;
   }
 };
+
+export const generateStatText = stat => {
+  switch (stat) {
+    case 'hp':
+      return 'hp';
+    case 'attack':
+      return 'atk';
+    case 'defense':
+      return 'def';
+    case 'special-attack':
+      return 'satk';
+    case 'special-defense':
+      return 'sdef';
+    case 'speed':
+      return 'spd';
+    default:
+      return 'hp';
+  }
+};

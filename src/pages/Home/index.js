@@ -1,26 +1,40 @@
-import React, {useCallback} from 'react';
+import React, {useEffect} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 
 import {Dimensions, ScrollView, StyleSheet, Text, View} from 'react-native';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
-import {useFocusEffect} from '@react-navigation/native';
 import SelectDropdown from 'react-native-select-dropdown';
 import MansoryList from '@react-native-seoul/masonry-list';
 
 import {MainHeader, PaginateButton, PokemonCard} from '../../components';
 import {pokeCategory} from '../../utils';
-import {getPokemons} from '../../redux/actTypes';
+import {
+  getNextPrevPokemons,
+  getPokemons,
+  getPokemonsCategory,
+} from '../../redux/actTypes';
 
 const HomePage = ({navigation}) => {
   const insets = useSafeAreaInsets();
   const dispatch = useDispatch();
   const pokemons = useSelector(state => state.homeReducers.pokemons);
 
-  useFocusEffect(
-    useCallback(() => {
+  useEffect(() => {
+    dispatch(getPokemons());
+  }, [dispatch]);
+
+  const pageAction = url => {
+    dispatch(getNextPrevPokemons(url));
+  };
+
+  const categoryAction = item => {
+    const {id} = item;
+    if (item.id > 0) {
+      dispatch(getPokemonsCategory(id));
+    } else {
       dispatch(getPokemons());
-    }, [dispatch]),
-  );
+    }
+  };
 
   const renderItem = ({item}) => <PokemonCard item={item} />;
 
@@ -38,9 +52,7 @@ const HomePage = ({navigation}) => {
 
         <SelectDropdown
           data={pokeCategory}
-          onSelect={item => {
-            console.log(pokemons);
-          }}
+          onSelect={categoryAction}
           buttonTextAfterSelection={selectedItem => {
             return selectedItem.name;
           }}
@@ -65,7 +77,7 @@ const HomePage = ({navigation}) => {
         />
 
         <View className="w-full items-center mt-10">
-          <PaginateButton />
+          <PaginateButton data={pokemons} onAction={pageAction} />
         </View>
 
         <View className="h-20" />

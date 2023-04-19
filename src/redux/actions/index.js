@@ -9,6 +9,18 @@ export const fetchPokemonsData = async () => {
   }
 };
 
+export const fetchPokemonsCategory = async id => {
+  try {
+    const response = await action(`type/${id}`);
+    const pokemons = {
+      results: response.data.pokemon,
+    };
+    return pokemons;
+  } catch (error) {
+    throw error;
+  }
+};
+
 export const fetchNextPrevPokemonsData = async url => {
   try {
     const response = await fullUrlAction(url);

@@ -15,7 +15,7 @@ const PreviousButton = ({disabled, onPress}) => {
         disabled ? 'opacity-30' : ''
       }`}>
       <IcPrevious />
-      <Text className="text-white ml-1">Prevs</Text>
+      <Text className="text-white ml-1 text-base font-bold">Prevs</Text>
     </TouchableOpacity>
   );
 };
