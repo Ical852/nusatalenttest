@@ -32,3 +32,5 @@ export const getPokemonsByName = name => ({
   type: GET_POKEMONS_BY_NAME,
   payload: {name},
 });
+
+export const SET_LOADING = 'SET_LOADING';

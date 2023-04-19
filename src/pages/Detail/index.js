@@ -1,12 +1,11 @@
 import React from 'react';
-
 import {Image, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
+import {SharedElement} from 'react-navigation-shared-element';
 
 import {IcBack, IcHeight, IcWeight, PokeBallBg} from '../../assets';
 import {generateStatText, generateTypeColor} from '../../utils';
 import {BarPercentage, TypeTags} from '../../components';
-import {SharedElement} from 'react-navigation-shared-element';
 
 const DetailPage = ({navigation, route}) => {
   const insets = useSafeAreaInsets();

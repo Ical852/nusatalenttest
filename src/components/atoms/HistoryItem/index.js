@@ -1,5 +1,5 @@
 import React from 'react';
-import {StyleSheet, Text, TouchableOpacity} from 'react-native';
+import {Text, TouchableOpacity} from 'react-native';
 
 const HistoryItem = ({name, onPress}) => {
   return (
@@ -12,5 +12,3 @@ const HistoryItem = ({name, onPress}) => {
 };
 
 export default HistoryItem;
-
-const styles = StyleSheet.create({});

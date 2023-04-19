@@ -1,11 +1,5 @@
-import {
-  StyleSheet,
-  Text,
-  TextInput,
-  TouchableOpacity,
-  View,
-} from 'react-native';
 import React from 'react';
+import {TextInput, TouchableOpacity, View} from 'react-native';
 import {IcBack, IcSearch} from '../../../assets';
 
 const SearchHeader = ({navigation, onChangeText, value, onEndEditing}) => {
@@ -34,5 +28,3 @@ const SearchHeader = ({navigation, onChangeText, value, onEndEditing}) => {
 };
 
 export default SearchHeader;
-
-const styles = StyleSheet.create({});

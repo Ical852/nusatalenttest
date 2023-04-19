@@ -1,5 +1,5 @@
 import React, {useEffect} from 'react';
-import {Image, StyleSheet, View} from 'react-native';
+import {Image, View} from 'react-native';
 import {SharedElement} from 'react-navigation-shared-element';
 
 import {PokeBall, PokeText} from '../../assets';
@@ -24,5 +24,3 @@ const SplashPage = ({navigation}) => {
 };
 
 export default SplashPage;
-
-const styles = StyleSheet.create({});

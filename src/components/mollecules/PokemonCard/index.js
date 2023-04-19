@@ -1,5 +1,4 @@
 import React, {useCallback, useEffect, useState} from 'react';
-
 import {
   Dimensions,
   Image,
@@ -8,14 +7,13 @@ import {
   TouchableOpacity,
 } from 'react-native';
 import {useNavigation} from '@react-navigation/native';
+import {SharedElement} from 'react-navigation-shared-element';
 
 import {fullUrlAction} from '../../../services';
 import {showError} from '../../../utils';
-import {SharedElement} from 'react-navigation-shared-element';
 
 const PokemonCard = ({item}) => {
   const navigation = useNavigation();
-
   const {name, url} = item?.pokemon ?? item;
   const [pokeDetail, setPokeDetail] = useState({});
   const [forms, setForms] = useState({});

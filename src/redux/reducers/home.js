@@ -3,6 +3,7 @@ import {
   GET_POKEMONS_BY_NAME_SUCCESS,
   GET_POKEMONS_CATEGORY_SUCCESS,
   GET_POKEMONS_SUCCESS,
+  SET_LOADING,
 } from '../actTypes';
 
 const initialState = {
@@ -34,6 +35,11 @@ export const homeReducers = (state = initialState, action) => {
       return {
         ...state,
         pokemons: action.pokemons,
+      };
+    case SET_LOADING:
+      return {
+        ...state,
+        isLoading: action.value,
       };
     default:
       return state;

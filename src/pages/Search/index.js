@@ -26,11 +26,9 @@ const SearchPage = ({navigation}) => {
     if (search !== '') {
       const newData = [...histories];
       newData.push(search);
-
       if (newData.filter(data => data === search).length <= 1) {
         storeData('histories', newData);
       }
-
       await searchName(search.toLowerCase());
     }
 

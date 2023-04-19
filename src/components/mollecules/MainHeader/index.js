@@ -1,13 +1,12 @@
 import React from 'react';
-
-import {Image, StyleSheet, TextInput, View} from 'react-native';
+import {Image, TextInput, View} from 'react-native';
 
 import {IcSearch, PokeBall, PokeText} from '../../../assets';
 import {SharedElement} from 'react-navigation-shared-element';
 
 const MainHeader = ({onPressIn}) => {
   return (
-    <View className="flex-row items-center h-16 px-5" style={styles.container}>
+    <View className="flex-row items-center h-16 px-5">
       <View className="flex-row items-center">
         <SharedElement id="pokeball">
           <Image source={PokeBall} className="w-8 h-8" />
@@ -32,5 +31,3 @@ const MainHeader = ({onPressIn}) => {
 };
 
 export default MainHeader;
-
-const styles = StyleSheet.create({});

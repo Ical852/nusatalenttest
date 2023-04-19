@@ -1,6 +1,5 @@
 import React from 'react';
-import {StyleSheet, View} from 'react-native';
-
+import {View} from 'react-native';
 import {NextButton, PreviousButton} from '../../atoms';
 
 const PaginateButton = ({data, onAction}) => {
@@ -30,5 +29,3 @@ const PaginateButton = ({data, onAction}) => {
 };
 
 export default PaginateButton;
-
-const styles = StyleSheet.create({});
