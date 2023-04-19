@@ -1,5 +1,5 @@
 import React from 'react';
-import {Image, TextInput, View} from 'react-native';
+import {Image, TextInput, TouchableOpacity, View} from 'react-native';
 
 import {IcSearch, PokeBall, PokeText} from '../../../assets';
 import {SharedElement} from 'react-navigation-shared-element';
@@ -17,14 +17,15 @@ const MainHeader = ({onPressIn}) => {
       </View>
       <View
         id="searchbar"
-        className="ml-5 border border-gray-300 rounded-md flex-1 p-2 flex-row items-center h-10">
+        className="ml-5 border border-gray-300 rounded-md flex-1 px-2 flex-row items-center h-10">
         <IcSearch />
-        <TextInput
-          editable={false}
-          className="flex-1 ml-2 text-xs"
-          placeholder="Search Pokemon Here..."
-          onPressIn={onPressIn}
-        />
+        <TouchableOpacity onPress={onPressIn}>
+          <TextInput
+            editable={false}
+            className="flex-1 ml-2 text-xs text-black"
+            placeholder="Search Pokemon Here..."
+          />
+        </TouchableOpacity>
       </View>
     </View>
   );

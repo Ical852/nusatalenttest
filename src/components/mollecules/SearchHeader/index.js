@@ -13,7 +13,7 @@ const SearchHeader = ({navigation, onChangeText, value, onEndEditing}) => {
       </TouchableOpacity>
       <View
         id="searchbar"
-        className="ml-5 border border-gray-300 rounded-md flex-1 p-2 flex-row items-center h-10">
+        className="ml-5 border border-gray-300 rounded-md flex-1 px-2 flex-row items-center h-10">
         <IcSearch />
         <TextInput
           className="flex-1 ml-2 text-xs"

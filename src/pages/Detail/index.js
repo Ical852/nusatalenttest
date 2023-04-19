@@ -1,5 +1,5 @@
 import React from 'react';
-import {Image, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
+import {Image, Platform, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
 import {SharedElement} from 'react-navigation-shared-element';
 
@@ -32,7 +32,7 @@ const DetailPage = ({navigation, route}) => {
       </View>
 
       <View
-        className={'flex-1 mt-40 pt-14 bg-white rounded-3xl items-center px-5'}>
+        className={'flex-1 mt-40 pt-14 bg-white rounded-t-3xl items-center px-5'}>
         <View className="flex-row items-center">
           {types.map((dtype, index) => {
             return <TypeTags key={index} types={dtype} />;
@@ -121,7 +121,7 @@ const DetailPage = ({navigation, route}) => {
         </View>
       </View>
 
-      <View className="h-52 w-full absolute top-32 items-center">
+      <View className={`h-52 w-full absolute top-${Platform.OS === 'ios' ? '32' : '20'} items-center`}>
         <SharedElement id={curName}>
           <Image source={{uri: front_default}} className="w-52 h-52" />
         </SharedElement>
