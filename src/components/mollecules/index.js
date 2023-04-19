@@ -1,5 +1,3 @@
-import TestItem from "./TestItem";
+import TestItem from './TestItem';
 
-export {
-    TestItem
-}
+export {TestItem};
