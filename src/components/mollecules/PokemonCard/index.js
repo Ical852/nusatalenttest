@@ -48,7 +48,7 @@ const PokemonCard = ({item}) => {
       </SharedElement>
       <Text
         numberOfLines={1}
-        className={'text-sm font-regular capitalize mt-1'}>
+        className={'text-sm font-regular capitalize mt-1 text-black'}>
         {name}
       </Text>
     </TouchableOpacity>
